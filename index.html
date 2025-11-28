@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            animation: fadeInUp 1s;
+        }
+
+        .about {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .about p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .projects {
+            padding: 60px 0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: #764ba2;
+        }
+
+        .skills {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .skill-item h3 {
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .contact {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hi, I'm Arshia Noor</h1>
+            <p>Data Engineer | Data Analyst | Developer | Designer </p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I’m passionate about Data Science and love turning data into meaningful insights. Here, you’ll find a collection of projects that highlight my skills in Python development, SQL, and data analysis. I enjoy solving complex problems and building solutions that make an impact.</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-content">
+                        <h3>Data Analysis Project</h3>
+                        <p>A comprehensive data analysis project using SQL and Python to clean, explore, and visualize large datasets. Key insights were derived through statistical analysis.</p>
+                        <a href="https://github.com/arshianoor5/DataScience" class="project-link" target="_blank" >View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🌐</div>
+                    <div class="project-content">
+                        <h3>Python Developing Projects</h3>
+                        <p>A full-stack web application built with modern technologies. Features include user authentication, real-time updates, and responsive design.</p>
+                        <a href="https://github.com/arshianoor5/Python" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🤖</div>
+                    <div class="project-content">
+                        <h3>Machine Learning Model</h3>
+                        <p>Developed a predictive model using machine learning algorithms to solve real-world problems. Achieved 95% accuracy on test data.</p>
+                        <a href="https://github.com/arshianoor5/MachineLearning" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📈</div>
+                    <div class="project-content">
+                        <h3>SQL Projects</h3>
+                        <p>Designed and prototyped a mobile application focused on user experience and accessibility. Created wireframes and interactive mockups.</p>
+                        <a href="https://github.com/arshianoor5/SQL" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>SQL</h3>
+                </div>
+                <div class="skill-item">
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-item">
+                    <h3>Power BI</h3>
+                </div>
+                <div class="skill-item">
+                    <h3>R</h3>
+                </div>
+                <div class="skill-item">
+                    <h3>Tableau</h3>
+                </div>
+                <div class="skill-item">
+                    <h3>Git</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:arshianoor5@outlook.com" class="contact-btn">Email Me</a>
+                <a href="https://github.com/arshianoor5" class="contact-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/arshia-noor-70520414b/" class="contact-btn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Arshia Noor. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
